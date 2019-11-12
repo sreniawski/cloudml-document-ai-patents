@@ -169,7 +169,7 @@ def convert_pdfs(main_project_id,
 
   # Create Bucket if it doesn"t exist
   subprocess.run(
-      f"gsutil mb -p {main_project_id} gs://{output_bucket_name}",
+      f"gsutil mb -p {main_project_id} -l us-central1 gs://{output_bucket_name}",
       shell=True)
 
   subprocess.run(
@@ -205,6 +205,8 @@ def image_classification(main_project_id,
     r"\.pdf": ".png"
   }, regex=True, inplace=False)
 
+  
+  # import pdb; pdb.set_trace()
   # Get Classification Columns
   output_df = output_df[["gcs_path", "issuer"]]
   output_df.to_csv(dest_uri, header=False, index=False)
@@ -429,7 +431,7 @@ def run_ocr(project_id, output_directory, temp_directory, service_acct):
   # make sure bucket exists
   output_bucket_name = project_id + "-lcm"
   subprocess.run(
-    f"gsutil mb -p {project_id} gs://{output_bucket_name}", shell=True)
+    f"gsutil mb -p {project_id} -l us-central1 gs://{output_bucket_name}", shell=True)
 
   for blob in blobs:
     if blob.name.endswith(".png"):

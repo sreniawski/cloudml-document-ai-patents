@@ -16,18 +16,18 @@
 # The project the Document AI pipeline will be built and hosted in.
 # TODO(michaelsherman): Make sure no line is past 80 characters (per bash style)
 pipeline_project:
-  project_id: # TODO(user): Set to your Project ID.
+  project_id: 'automl-document-mling' # TODO(user): Set to your Project ID.
   region: 'us-central1' # Currently (Aug 2019) only "us-central1" supported.
-  demo_sample_data: # TODO(user): GCS location of sample patents to process for demo
-  demo_dataset_id: # TODO(user): BQ dataset to store information collected for demo
+  demo_sample_data: 'gs://automl-document-mling/patent_sample' # TODO(user): GCS location of sample patents to process for demo
+  demo_dataset_id: 'patent_demo' # TODO(user): BQ dataset to store information collected for demo
 
 # Parameters for creation of a service account with get_service_acct.sh.
 service_acct:
-  creator_user_id: # TODO(user): Set to your GCP login email.
+  creator_user_id: 'mingling@google.com' # TODO(user): Set to your GCP login email.
   acct_name: 'patent-service-acct'
   acct_description: 'Service-account-for-patent-demo'
   acct_display_name: 'Patent-Demo-Service-Account'
-  key_path: '$HOME/keys/patent-demo-service-acct.json'
+  key_path: 'patent-demo-service-acct.json'
 
 # TODO(michaelsherman): Each of these should just be a BQ proj.dataset.table, they should
 #   be as independent as possible.
@@ -41,16 +41,16 @@ pdp_project:
   text_table_id: 'invention_types'
   ner_table_id: 'extracted_data'
 model_imgclassifier:
-  model_id: # 'TODO(user): replace with model id when training is complete
+  model_id: 'ICN2958130481415061504' # 'TODO(user): replace with model id when training is complete
   demo_table_id: 'document_classification'
 model_objdetect:
-  model_id: # 'TODO(user): replace with model id when training is complete
+  model_id: 'IOD1462935405128056832' # 'TODO(user): replace with model id when training is complete
   demo_table_id: 'object_detection'
 model_textclassifier:
-  model_id: # 'TODO(user): replace with model id when training is complete
+  model_id: 'TCN4493954603813995554'  # 'TODO(user): replace with model id when training is complete
   demo_table_id: 'subject_classification'
 model_ner:
-  model_id: # 'TODO(user): replace with model id when training is complete
+  model_id: 'TEN2841036891103428608' # 'TODO(user): replace with model id when training is complete
   demo_table_id: 'ner_results'
   fields_to_extract:
   - field_name: 'gcs_path'

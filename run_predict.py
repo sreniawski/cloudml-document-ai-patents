@@ -24,6 +24,7 @@ import yaml
 
 config = yaml.safe_load(open("config.yaml", "r"))
 
+
 # Convert sample pdfs to png and txt files
 pdf2png.convert_pdfs(
   main_project_id=config["pipeline_project"]["project_id"],
@@ -81,3 +82,4 @@ final_view.create(
   text_table=config["model_textclassifier"]["demo_table_id"],
   ner_table=config["model_ner"]["demo_table_id"],
   service_acct=config["service_acct"]["key_path"])
+
