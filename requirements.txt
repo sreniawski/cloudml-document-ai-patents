@@ -12,6 +12,6 @@ pdf2image==1.6.0
 pillow==6.1.0
 pyyaml==5.1.2
 regex==2019.6.8
-tensorflow==1.14.0
+tensorflow==1.15.2
 wand==0.5.6
 yq==2.7.2
