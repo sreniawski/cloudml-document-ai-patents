@@ -16,7 +16,7 @@
 # The project the Document AI pipeline will be built and hosted in.
 # TODO(michaelsherman): Make sure no line is past 80 characters (per bash style)
 pipeline_project:
-  project_id: '' # TODO(user): Set to your Project ID.
+  project_id: 'qwiklabs-resources' # TODO(user): Set to your Project ID.
   region: 'us-central1' # Currently (Aug 2019) only "us-central1" supported.
   demo_sample_data: 'gs://[project_id]/patent_sample' # TODO(user): GCS location of sample patents to process for demo
   demo_dataset_id: 'patent_demo' # TODO(user): BQ dataset to store information collected for demo
